@@ -11,7 +11,7 @@ omegaconf
 opencv-contrib-python
 requests
 piexif
-Pillow==9.5.0
+Pillow==8.4.0
 pytorch_lightning==1.7.7
 realesrgan
 scikit-image>=0.19
