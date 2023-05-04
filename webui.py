@@ -141,6 +141,8 @@ To reinstall the desired version, run with commandline flag --reinstall-xformers
 Use --skip-version-check commandline argument to disable this check.
             """.strip())
 
+def initialize_test():
+    fix_asyncio_event_loop_policy()
 
 def initialize():
     fix_asyncio_event_loop_policy()
