@@ -302,7 +302,7 @@ def prepare_environment():
 
     if args.update_all_extensions:
         git_pull_recursive(extensions_dir)
-    
+
     if "--exit" in sys.argv:
         print("Exiting because of --exit argument")
         exit(0)
@@ -350,4 +350,5 @@ def start():
 
 if __name__ == "__main__":
     prepare_environment()
-    start()
+    if '--nostart' not in sys.argv:
+        start()
