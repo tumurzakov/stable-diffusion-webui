@@ -142,7 +142,7 @@ Use --skip-version-check commandline argument to disable this check.
             """.strip())
 
 def initialize_test():
-    fix_asyncio_event_loop_policy()
+    pass
 
 def initialize():
     fix_asyncio_event_loop_policy()
