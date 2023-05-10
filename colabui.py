@@ -6,10 +6,12 @@ import signal
 import re
 import warnings
 import json
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.middleware.gzip import GZipMiddleware
-from packaging import version
+
+if os.environ.get('NO_FASTAPI', None) is None:
+    from fastapi import FastAPI
+    from fastapi.middleware.cors import CORSMiddleware
+    from fastapi.middleware.gzip import GZipMiddleware
+    from packaging import version
 
 import logging
 logging.getLogger("xformers").addFilter(lambda record: 'A matching Triton is not available' not in record.getMessage())
@@ -26,8 +28,9 @@ warnings.filterwarnings(action="ignore", category=UserWarning, module="torchvisi
 
 startup_timer.record("import torch")
 
-import gradio
-startup_timer.record("import gradio")
+if os.environ.get('NO_GRADIO', None) is None:
+    import gradio
+    startup_timer.record("import gradio")
 
 import ldm.modules.encoders.modules
 startup_timer.record("import ldm")
