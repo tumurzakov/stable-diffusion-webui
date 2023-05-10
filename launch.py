@@ -350,5 +350,4 @@ def start():
 
 if __name__ == "__main__":
     prepare_environment()
-    if '--nostart' not in sys.argv:
-        start()
+    start()
