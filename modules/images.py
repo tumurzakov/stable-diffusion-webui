@@ -13,7 +13,7 @@ import numpy as np
 import piexif
 import piexif.helper
 from PIL import Image, ImageFont, ImageDraw, PngImagePlugin
-from fonts.ttf import Roboto
+from font_roboto import Roboto
 import string
 import json
 import hashlib
@@ -365,7 +365,7 @@ class FilenameGenerator:
         self.seed = seed
         self.prompt = prompt
         self.image = image
-        
+
     def hasprompt(self, *args):
         lower = self.prompt.lower()
         if self.p is None or self.prompt is None:
