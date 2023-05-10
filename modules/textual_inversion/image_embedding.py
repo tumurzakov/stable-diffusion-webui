@@ -3,7 +3,7 @@ import json
 import numpy as np
 import zlib
 from PIL import Image, PngImagePlugin, ImageDraw, ImageFont
-from fonts.ttf import Roboto
+from font_roboto import Roboto
 import torch
 from modules.shared import opts
 
